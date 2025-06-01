@@ -87,6 +87,7 @@ coag=read.data()
 # Descriptive stats, figures, and narrative for baseline FDP
 
 describe(FDP0,coag)                     # default
+describe(FDP,coag,fig=0)                # no figures
 describe(FDP0,coag,fig=2)               # more figures
 describe(FDP0,coag,fig=3)               # even more figures
 describe(FDP0,coag,fig=2,clr="skyblue") # figures with skyblue color
@@ -96,7 +97,20 @@ describe(FDP0,coag,fig=2,clr="skyblue") # figures with skyblue color
 # must use quotes for column name; must match name in R exactly
 
 
+########################################
+# The tbl option
 
+describe(FDP0,coag,tbl=0)    # no table
+describe(FDP0,coag,tbl=1)    # one table
+describe(FDP0,coag,tbl=2)    # more tables (if any more to show)
+
+#######################################
+# The txt option
+
+describe(FDP0,coag,txt=0)    # no text
+describe(FDP0,coag,txt=1)    # some text
+describe(FDP0,coag,txt=2)    # more text (if any more to show)
+describe(FDP0,coag,txt=3)    # even more text (if any more to show)
 
 
 ####################################
