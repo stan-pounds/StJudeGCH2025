@@ -114,6 +114,14 @@ describe(FDP0,coag,txt=3)    # even more text (if any more to show)
 
 
 ####################################
+# Descriptives for treatment (an unordered category variable)
+
+describe(Treatment,coag)                       # default
+describe(Treatment,coag,clr=c("red","blue"))   # red and blue for the figure
+describe(Treatment,coag,clr=c("gold","green")) # gold and green
+
+
+####################################
 # How do I know the names of colors available in R?
 # Show available color names in R
 
@@ -121,33 +129,39 @@ show.colors()
 
 
 
-
-
-
-####################################
-# Descriptives for treatment (an unordered category variable)
-
-describe(Treatment,coag)                 # default
-describe(Treatment,coag,fig=2)           # more figures
-describe(Treatment,coag,clr="Tropic")    # use the "Tropic" color palette
-describe(Treatment,coag,clr="Spectral")  # use the "Spectral" color palette
-
-
-
-
-
-
-
 ####################################
 # show available color palettes in R
 
-show.palettes(3)  # palettes of 3 colors
-show.palettes(4)  # palettes of 4 colors
-show.palettes(10) # palettes of 10 colors
+show.palettes(2)  # palettes of 2 colors
 
 
+#############################################
+# Use color palettes for figures
 
 
+describe(Treatment,coag,clr="Tropic")        # use the "Tropic" color palette
+describe(Treatment,coag,clr="Spectral")# use the "Spectral" color palette
+describe(Treatment,coag,clr="rainbow")
+
+
+#####################################
+# Try multiple options
+
+describe(Treatment,coag,
+         clr="Spectral",fig=2,txt=0)
+
+describe(Treatment,coag,
+         clr="Lisbon",fig=1,tbl=0)
+
+describe(Treatment,coag,
+         fig=0,txt=1,tbl=0)
+
+
+###################################
+# Copy a table into Word
+
+FDP0.result=describe(FDP0,coag)  # save results as "FDP.result" in R
+word.table(FDP0.result)          # ask R to produce a table to copy into word
 
 ###################################
 # Don't freak out if you get errors in R.
@@ -162,6 +176,7 @@ describe(fdp0,coag)         # capitalize FDP0
 describe(FDP0,coag,fg=2)    # should be fig=2 instead of fg=2
 describe(FDP0;coag)         # should be comma instead of semi-colon
 describe(FDP0,coag,clr=red) # color name "red" must be in quotes
+
 
 
 
